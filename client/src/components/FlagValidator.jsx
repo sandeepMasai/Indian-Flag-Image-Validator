@@ -1,5 +1,5 @@
 import React from 'react'
-
+import log from '../assets/Flag_of_India.svg'
 import { useState, useCallback } from "react";
 import { ImageUpload } from "./ImageUpload";
 import { ValidationReport } from "./ValidationReport";
@@ -76,27 +76,32 @@ export const FlagValidator = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-flag-white to-background">
+    <div className="min-h-screen">
       {/* Header */}
-      <div className="bg-card border-b shadow-elegant">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-12 h-12 bg-gradient-to-r from-saffron via-flag-white to-flag-green rounded-lg flex items-center justify-center shadow-patriotic">
-              <Flag className="w-6 h-6 text-chakra-blue" />
-            </div>
-            <div>
-              <h1 className="text-3xl font-bold text-foreground">
-                Indian Flag Validator
-              </h1>
-              <p className="text-muted-foreground">
-                Independence Day Coding Challenge • BIS Specification Compliance
-              </p>
-            </div>
-          </div>
-
-          {getOverallStatusBadge()}
-        </div>
+     <div className="bg-card/80 backdrop-blur-sm border-b shadow-elegant sticky top-0 z-10">
+  <div className="container mx-auto px-4 py-6">
+    <div className="flex items-center gap-3 mb-4">
+      <div className="w-12 h-12 overflow-hidden rounded shadow-md">
+        <img
+          src={log}
+          alt="Indian Flag"
+          className="w-full h-full object-cover"
+        />
       </div>
+      <div>
+        <h1 className="text-3xl font-bold text-foreground">
+          Indian Flag Validator
+        </h1>
+        <p className="text-muted-foreground">
+          Independence Day Coding Challenge • BIS Specification Compliance
+        </p>
+      </div>
+    </div>
+
+    {getOverallStatusBadge()}
+  </div>
+</div>
+
 
       <div className="container mx-auto px-4 py-8">
         <div className="grid gap-8 lg:grid-cols-2">
